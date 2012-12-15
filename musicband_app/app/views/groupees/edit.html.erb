@@ -1,0 +1,8 @@
+<h1 class="colorstyleh1">Edit Groupee</h1>
+
+<%= form_for @groupee do |form| %>
+   <%= render "shared/error_messages", :object => @groupee %>
+   <%= render "shared/groupee_form", :object => form %>
+   &nbsp;<%= link_to 'Show', groupee_path %></td>
+   <%= render "shared/groupee_footer" %>
+<% end %>

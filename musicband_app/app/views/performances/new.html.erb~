@@ -1,0 +1,15 @@
+<h1 class="colorstyleh1">New Performance</h1>
+
+<%= form_for @performance do |form| %>
+   <%= render "shared/error_messages", :object => @performance %>
+   <table>
+      <tr>
+         <td><%= form.label :name %></td>
+         <td><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= form.submit %></td>
+      </tr>
+   </table>
+<% end %>

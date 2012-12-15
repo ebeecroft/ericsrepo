@@ -1,0 +1,90 @@
+<h1 class="colorstyleh1">Welcome&nbsp;<%= @groupee.first_name %>&nbsp;<%= @groupee.last_name %></h1>
+<!----Displays the user information about a specific user------------> 
+<br>
+<div class="entry">
+<table>
+   <tr>
+      <td>Personal Information</td>
+      <% if current_groupee == @groupee %>
+         <td><%= link_to "Edit", [:edit, @groupee] %></td>
+      <% end %>
+   </tr>
+   <tr>
+      <td>First Name</td>
+      <td><%= @groupee.first_name %></td>
+   </tr>
+   <tr>
+      <td>Last Name</td>
+      <td><%= @groupee.last_name %></td>
+   </tr>
+   <tr>
+      <td>Username</td>
+      <td><%= @groupee.username %></td>
+   </tr>
+   <tr>
+      <td>E-mail</td>
+      <td><%= mail_to @groupee.email %></td>
+   </tr>
+</table>
+</div>
+<br>
+<h2 class="colorstyleh2">Blogs</h2>
+<!-----Reminder remove align and border from table and set in a class in the style sheet --->
+   <!---This is the master bookmark for looping --->
+<% @groupee.blogs.each do |blog| %>
+<table>
+      <tr>
+         <td class="navaddspace"><%= link_to blog.title, blog %></td>
+         <% if !current_groupee.nil? && current_groupee.id == @groupee.id %>
+            <td><%= link_to "edit", edit_blog_path(blog) %></td>
+         <% end %>
+         <% if !current_groupee.nil? && current_groupee.admin? %>
+            <td><%= button_to "Delete", blog, :confirm => "Are you sure?", :method => :delete %></td>
+         <% end %>
+         <div class="entry">
+            <hr />
+         </div>
+      </tr>
+</table>
+<% end %>
+<hr />
+<table>
+   <tr>
+      <!----Only the current user can add a new bookmark to their profile--->
+      <% if !current_groupee.nil? && current_groupee.id == @groupee.id %>
+         <td><%= link_to 'New Blog', new_blog_path %></td>
+      <% end %>
+   </tr>
+</table>
+<% if !Performance.find(:all).empty? %>
+<br>
+<br>
+<h3 class="colorstyleh3">Performances Attended</h3>
+<br>
+<table>
+   <tr>
+      <% @groupee.attendances.each do |attendance| %>
+         <td><ul><li><%= link_to attendance.performance.name, performance_path(attendance.performance) %>
+         <% if current_groupee.admin? %>
+            <%= link_to "x", groupee_attendance_path(attendance.groupee,attendance), :method => :delete %>&nbsp;
+         <% end %>
+         </li></ul></td>
+      <% end %>
+   </tr>
+</table>
+<br>
+<table>
+  <tr>
+     <% if !current_groupee.nil? && current_groupee.id == @groupee.id %>
+        <% if !Performance.find(:all).empty? %>
+           <%= form_for :performance, :url => groupee_attendances_path(@groupee) do |form| %>
+              <!---I want the route bookmark/id/taggings to work but it does not work---->
+              <td><%= form.label :name %></td>
+              <td><%= form.collection_select :performance_id, Performance.all, :id, :name %></td>
+              <td><%= form.submit %></td>
+           <% end %>
+        <% end %>
+     <% end %>
+  </tr>
+</table>
+<% end %>

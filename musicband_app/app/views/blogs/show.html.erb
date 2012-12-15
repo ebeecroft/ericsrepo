@@ -1,0 +1,45 @@
+<h1 class="colorstyleh1"><%= @blog.title %></h1>
+<br>
+<div class="entry">
+   <%= @blog.note %>
+</div>
+<br>
+<h2 class ="colorstyleh2">Comments</h2>
+<% @blog.comments.each do |comment| %>
+   <table>
+      <div class="entry">
+         <hr />
+         <tr>
+            <td>By: <%= comment.author %>
+            <% if !current_groupee.nil? && current_groupee.admin? %>
+               <%= button_to "Delete", [@blog, comment], :confirm => "Are you sure?", :method => :delete %></td>
+            <% end %>
+         </tr>
+         <tr>
+            <td><%= comment.words %></td>
+         </tr>
+      </div>
+   </table>
+<% end %>
+<% if !current_groupee.nil? %>
+<hr />
+<br>
+<h3 class="colorstyleh3">Add Comment</h3>
+<br>
+   <%= form_for [@blog, Comment.new] do |form| %>
+      <table>
+         <tr>
+            <td><%= form.hidden_field :author, :value => current_groupee.username %></td>
+         </tr>
+         <tr>
+            <td><%= form.label :words %></td>
+         </tr>
+         <tr>
+            <td><%= form.text_area :words, :placeholder => "Enter some text" %></td>
+         </tr>
+         <tr>
+            <td><%= form.submit %></td>
+         </tr>
+      </table>
+   <% end %>
+<% end %>

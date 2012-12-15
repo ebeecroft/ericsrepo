@@ -1,0 +1,32 @@
+<table>
+      <tr>
+         <td><%= object.label :first_name %></td>
+         <td><%= object.text_field :first_name %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :last_name %></td>
+         <td><%= object.text_field :last_name %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :username %></td>
+         <td><%= object.text_field :username %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :email %></td>
+         <td><%= object.text_field :email %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :password %></td>
+         <td><%= object.password_field :password %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :password_confirmation, "Confirm" %></td>
+         <td><%= object.password_field :password_confirmation %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= object.submit %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= link_to 'Home', root_path %>

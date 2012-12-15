@@ -1,0 +1,11 @@
+<h1>Contacts</h1>
+<% @contacts.each do |contact| %>
+   <table>
+      <tr>
+         <td><%= contact.name %></td>
+         <td><%= mail_to contact.email %></td>
+         <td><%= contact.note %></td>
+         <td><%= button_to "Delete", contact, :confirm => "Are you sure?", :method => :delete %></td>
+      </tr>
+   </table>
+<% end %>

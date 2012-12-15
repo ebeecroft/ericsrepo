@@ -1,0 +1,22 @@
+<h1>Attendance</h1>
+
+<%= form_for @attendance do |form| %>
+   <table>
+      <tr>
+         <td><%= form.label :user_id %></td>
+         <td><%= form.text_field :user_id %></td>
+      </tr>
+      <tr>
+         <td><%= form.label :performance_id %></td>
+         <td><%= form.text_field :performance_id %></td>
+      </tr>
+      <tr>
+         <td><%= form.label :note %></td>
+         <td><%= form.text_area :note %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= form.submit %></td>
+      </tr>
+   </table>
+<% end %>

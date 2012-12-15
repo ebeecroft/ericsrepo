@@ -1,0 +1,10 @@
+namespace :db do
+  desc "Fill database with sample data"
+  task populate: :environment do
+    admin = Groupee.create!(first_name: "Monty", last_name: "Mole",
+                 email: "mole@many.com", username: "mmole",
+                 password: "mmole",
+                 password_confirmation: "mmole")
+    admin.toggle!(:admin)
+  end
+end

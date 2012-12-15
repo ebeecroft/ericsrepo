@@ -1,0 +1,15 @@
+<h1 class="colorstyleh1"><center>Blogs</center></h1>
+<% @blogs.each do |blog| %>
+<table>
+   <tr>
+      <td><h2><%= link_to blog.title, blog %></h2></td>
+         <div class="entry">
+            <% if (!current_groupee.nil? && current_groupee.admin?) %>
+               <td><%= link_to "Edit", [:edit, blog] %></td>
+               <td><%= button_to "Delete", blog, :confirm => "Are you sure?", :method => :delete %></td>
+            <% end %>
+            <hr />
+         </div>
+    </tr>
+</table>
+<% end %>

@@ -1,0 +1,6 @@
+class Comment < ActiveRecord::Base
+   belongs_to :blog
+   belongs_to :groupee
+   attr_accessible :words
+   validates :words, :presence => true
+end

@@ -1,0 +1,30 @@
+<h1 class="colorstyleh1">Contact</h1>
+<br>
+<!---Compromise sacraficed completly general form that left only two lines of code in both files--->
+<!---for a six line code segment that performed general partials, but added differences to the ---->
+<!---new/edit pages----->
+<%= mail_to "oldschool@sbcglobal.net" %>
+
+<br>
+<br>
+<%= form_for @contact do |form| %>
+   <%= render "shared/error_messages", :object => @contact %>
+   <table>
+      <tr>
+         <td><%= form.label :name %></td>
+         <td><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+         <td><%= form.label :email %></td>
+         <td><%= form.text_field :email %></td>
+      </tr>
+      <tr>
+         <td><%= form.label :note %></td>
+         <td><%= form.text_area :note %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= form.submit %></td>
+      </tr>
+   </table>
+<% end %>

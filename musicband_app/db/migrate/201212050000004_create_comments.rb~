@@ -1,0 +1,16 @@
+class CreateComments < ActiveRecord::Migration
+
+   def up
+      create_table :comments do |u|
+         u.text :words
+         u.references :blog
+         u.references :groupee
+
+         u.timestamps
+      end
+   end
+
+   def down
+      drop_table :comments
+   end
+end

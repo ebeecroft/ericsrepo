@@ -1,0 +1,8 @@
+<h1 class="colorstyleh1">Edit a Blog</h1>
+
+<%= form_for @blog do |form| %>
+   <%= render "shared/error_messages", :object => @blog %>
+   <%= render "shared/blog_form", :object => form %>
+   &nbsp;<%= link_to 'Show', blog_path %></td>
+   <%= render "shared/blog_footer" %>
+<% end %>

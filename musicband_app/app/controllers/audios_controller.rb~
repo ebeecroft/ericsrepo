@@ -1,0 +1,11 @@
+class AudiosController < ApplicationController
+   respond_to :html
+
+   def new
+      @audio = Audio.new
+   end
+
+   def show
+      send_file 'audios/sunshine.ogg'
+   end
+end

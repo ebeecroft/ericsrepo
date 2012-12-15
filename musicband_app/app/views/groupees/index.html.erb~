@@ -1,0 +1,15 @@
+<h1>All Groupees</h1>
+<% @groupees.each do |groupee| %>
+<table>
+   <tr>
+      <td><h2><%= link_to groupee.username, groupee %></h2></td>
+         <div class="entry">
+                  <td><%= link_to "Edit", [:edit, groupee] %></td>
+                  <% if !groupee.admin? %>
+                  <td><%= button_to "Delete", groupee, :confirm => "Are you sure?", :method => :delete %></td>
+                  <% end %>
+            <hr />
+         </div>
+    </tr>
+</table>
+<% end %>

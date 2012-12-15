@@ -1,0 +1,7 @@
+class BandMembersController < ApplicationController
+   respond_to :html
+
+   def new
+      @band_members = BandMembers.new
+   end
+end

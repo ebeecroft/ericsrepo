@@ -1,0 +1,17 @@
+class CreateBandMembers < ActiveRecord::Migration
+
+   def up
+      create_table :bandmembers do |u|
+         u.string :name
+         u.string :instrument
+         u.string :voice
+         u.string :band
+
+         u.timestamps
+      end
+   end
+
+   def down
+      drop_table :bandmembers
+   end
+end

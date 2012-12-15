@@ -1,0 +1,16 @@
+<table>
+      <tr>
+         <td><%= object.label :title %></td>
+         <td><%= object.text_field :title %></td>
+      </tr>
+      <tr>
+         <td><%= object.label :note %></td>
+         <td><%= object.text_area :note %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= object.submit %></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><%= link_to "Groupee", current_groupee %></td>

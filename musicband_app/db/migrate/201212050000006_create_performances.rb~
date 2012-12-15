@@ -1,0 +1,15 @@
+class CreatePerformances < ActiveRecord::Migration
+
+   def up
+      create_table :performances do |u|
+         u.integer :population
+         u.string :accoustics
+
+         u.timestamps
+      end
+   end
+
+   def down
+      drop_table :performances
+   end
+end

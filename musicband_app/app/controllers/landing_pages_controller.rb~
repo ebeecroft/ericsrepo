@@ -1,0 +1,13 @@
+class LandingPagesController < ApplicationController
+
+def home
+end
+
+def about
+end
+
+def music
+ audio_tag ("/landing_pages/sunshine.wav")
+end
+
+end

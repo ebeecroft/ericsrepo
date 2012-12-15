@@ -1,0 +1,5 @@
+class AddAdminToGroupees < ActiveRecord::Migration
+  def change
+    add_column :groupees, :admin, :boolean
+  end
+end

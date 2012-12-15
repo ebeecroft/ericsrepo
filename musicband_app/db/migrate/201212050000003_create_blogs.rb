@@ -1,0 +1,16 @@
+class CreateBlogs < ActiveRecord::Migration
+
+   def up
+      create_table :blogs do |u|
+         u.string :title
+         u.text :note
+         u.references :groupee
+
+         u.timestamps
+      end
+   end
+
+   def down
+      drop_table :blogs
+   end
+end

@@ -1,0 +1,19 @@
+class CreateGroupees < ActiveRecord::Migration
+
+   def up
+      create_table :groupees do |u|
+         u.string :first_name
+         u.string :last_name
+         u.string :username
+         u.string :password_digest
+         u.string :confirm
+         u.string :email
+
+         u.timestamps
+      end
+   end
+
+   def down
+      drop_table :groupees
+   end
+end

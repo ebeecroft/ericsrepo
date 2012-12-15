@@ -1,0 +1,31 @@
+<h1 class="colorstyleh1">Performance</h1>
+<br>
+<div class="entry">
+<table>
+   <% if !@performance.nil? %>
+   <tr>
+      <td>Performance name:</td>
+      <td><%= @performance.name %></td>
+   </tr>
+   <% end %>
+</table>
+</div>
+
+<h2 class ="colorstyleh2">Groupees Attending</h2>
+<br>
+<center>
+<table border="2" align="center">
+   <tr>
+      <th class="navaddspace">Username</th>
+      <th class="navaddspace">First Name</th>
+      <th>Last Name</th>
+   </tr>
+   <% @performance.attendances.each do |attendance| %>
+      <tr>
+         <td><%= link_to attendance.groupee.username, groupee_path(attendance.groupee.username)  %></td>
+         <td><%= attendance.groupee.first_name %></td>
+         <td><%= attendance.groupee.last_name %></td>
+      </tr>
+   <% end %>
+</table>
+</center>

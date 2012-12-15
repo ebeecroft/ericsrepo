@@ -1,0 +1,52 @@
+<h1 class="colorstyleh1">Songs</h1>
+
+<table>
+   <tr>
+      <td>My Girl</td>
+      <td>Don't Let the sun catch you crying</td>
+      <td>Eight Days a Week</td>
+   </tr>
+   <tr>
+      <td><%= audio_tag "/MyGirl.ogg", :controls => true %></td>
+      <td><%= audio_tag "/DontLettheSunCatchYouCrying.ogg", :controls => true %></td>
+      <td><%= audio_tag "/EightDaysaWeek.ogg", :controls => true %></td>
+   </tr>
+   <tr>
+      <td>Garden Party clip</td>
+      <td>Hang On Sloopy</td>
+      <td>Just My Imagination</td>
+   </tr>
+   <tr>
+      <td><%= audio_tag "/GardenPartyclip.ogg", :controls => true %></td>
+      <td><%= audio_tag "/HangOnSloopy.ogg", :controls => true %></td>
+      <td><%= audio_tag "/JustMyImagination.ogg", :controls => true %></td>
+   </tr>
+   <tr>
+      <td>Knocking on Heavens Door Basement</td>
+      <td>Moondance</td>
+      <td>Pieces of April</td>
+   </tr>
+   <tr>
+      <td><%= audio_tag "/KnockingonHeavensDoorBasement.ogg", :controls => true %></td>
+      <td><%= audio_tag "/Moondance.ogg", :controls => true %></td>
+      <td><%= audio_tag "/PiecesofApril.ogg", :controls => true %></td>
+   </tr>
+   <tr>
+      <td>She's Not There</td>
+      <td>Show Me the Way</td>
+      <td>Sunshine Superman</td>
+   </tr>
+   <tr>
+      <td><%= audio_tag "/ShesNotThere.ogg", :controls => true %></td>
+      <td><%= audio_tag "/ShowMetheWay.ogg", :controls => true %></td>
+      <td><%= audio_tag "/SunshineSuperman.ogg", :controls => true %></td>
+   </tr>
+   <tr>
+      <td>Take Me to the River</td>
+      <td>Time After Time</td>
+   </tr>
+   <tr>
+      <td><%= audio_tag "/TakeMetotheRiver.ogg", :controls => true %></td>
+      <td><%= audio_tag "/TimeAfterTime.ogg", :controls => true %></td>
+   </tr>
+</table>
