@@ -2,15 +2,14 @@
 <html>
 <head>
   <title>MusicbandApp</title>
-  <%= stylesheet_link_tag    "reset.css", :media => "all" %>
-  <%= stylesheet_link_tag    "oldschool_styles.css", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="colorline">
       <a href="/"><%= image_tag 'Picture1.gif' %></a>
-      <h1 class="textcolor">OLDE SCHOOL BAND</h1>
+      <h1 class="logotextcolor">OLDE SCHOOL BAND</h1>
 </div>
 <div class="thinlinecolor">
 <% if current_groupee %>

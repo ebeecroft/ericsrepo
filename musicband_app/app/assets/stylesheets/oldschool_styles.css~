@@ -1,13 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-body {
-	
-}
-body,td,th {
-	/*font-family: Times New Roman, Times, serif;
-	font-size: 14px;
-	color: #000000;*/
-}
+
 .colorline
 {
    background-color: orange
@@ -75,9 +68,15 @@ body,td,th {
    font-size: 20px;
 }
 
+.colorstylehomepage
+{
+   color: #CD853F;
+   font-size: 16px;
+}
+
 .abouttable
 {
-  
+  width: 80%;
 }
 .table
 a:link {

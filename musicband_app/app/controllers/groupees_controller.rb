@@ -19,7 +19,11 @@ class GroupeesController < ApplicationController
       if @groupee.nil?
          render "shared/404"
       else
-         respond_with @groupee
+         if !current_groupee.nil?
+            respond_with @groupee
+         else
+            render "shared/403"
+         end
       end
    end
 

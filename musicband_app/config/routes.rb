@@ -72,7 +72,7 @@ MusicbandApp::Application.routes.draw do
   match 'sessions' => "sessions#create", :via => :post
   match 'logout' => "sessions#destroy", :via => :delete
   match 'contact' => "contacts#new"
-  match 'about' => "landing_pages#about"
-  root :to => 'landing_pages#home'
+  match 'about' => "public_pages#about"
+  root :to => "public_pages#home"
 
 end

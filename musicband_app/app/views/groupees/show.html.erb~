@@ -22,8 +22,12 @@
       <td><%= @groupee.username %></td>
    </tr>
    <tr>
-      <td>E-mail</td>
-      <td><%= mail_to @groupee.email %></td>
+      <% if !current_groupee.nil? %>
+         <% if current_groupee.id == @groupee || current_groupee.admin? %>
+            <td>E-mail</td>
+            <td><%= mail_to @groupee.email %></td>
+         <% end %>
+      <% end %>
    </tr>
 </table>
 </div>
@@ -36,7 +40,7 @@
       <tr>
          <td class="navaddspace"><%= link_to blog.title, blog %></td>
          <% if !current_groupee.nil? && current_groupee.id == @groupee.id %>
-            <td><%= link_to "edit", edit_blog_path(blog) %></td>
+            <td class="navaddspace"><%= link_to "edit", edit_blog_path(blog) %></td>
          <% end %>
          <% if !current_groupee.nil? && current_groupee.admin? %>
             <td><%= button_to "Delete", blog, :confirm => "Are you sure?", :method => :delete %></td>
@@ -65,7 +69,7 @@
    <tr>
       <% @groupee.attendances.each do |attendance| %>
          <td><ul><li><%= link_to attendance.performance.name, performance_path(attendance.performance) %>
-         <% if current_groupee.admin? %>
+         <% if !current_groupee.nil? && current_groupee.admin? %>
             <%= link_to "x", groupee_attendance_path(attendance.groupee,attendance), :method => :delete %>&nbsp;
          <% end %>
          </li></ul></td>
