@@ -56,7 +56,7 @@
    <tr>
       <!----Only the current user can add a new bookmark to their profile--->
       <% if !current_groupee.nil? && current_groupee.id == @groupee.id %>
-         <td><%= link_to 'New Blog', new_blog_path %></td>
+         <td><%= button_to 'New Blog', new_blog_path %></td>
       <% end %>
    </tr>
 </table>
