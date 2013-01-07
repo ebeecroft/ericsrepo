@@ -74,6 +74,14 @@
    font-size: 16px;
 }
 
+.colorstylemarginhomepage
+{
+   color: #CD853F;
+   font-size: 16px;
+   margin-left: 40px;
+   margin-right: 40px;
+}
+
 .abouttable
 {
   width: 80%;

@@ -74,11 +74,18 @@
    font-size: 16px;
 }
 
+.colorstylemarginhomepage
+{
+   color: #CD853F;
+   font-size: 16px;
+   margin: 40px;
+}
+
 .abouttable
 {
   width: 80%;
 }
-.table
+
 a:link {
 	color: #993300;
 }
